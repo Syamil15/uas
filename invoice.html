@@ -31,7 +31,6 @@
         
     
     <main>
-        <!-- Invoice Section -->
         <div id="invoice-section" class="invoice-box">
             <h1>INVOICE</h1>
             <div class="invoice-header">
@@ -95,7 +94,7 @@
                 document.getElementById('invoice-pembayaran').innerText = invoiceData.pembayaran;
                 document.getElementById('invoice-pesanan').innerText = invoiceData.pesanan;
                 
-                // Mengisi tanggal invoice dan jatuh tempo secara otomatis
+              
                 const today = new Date();
                 const dueDate = new Date(today);
                 dueDate.setDate(dueDate.getDate() + 7); // Jatuh tempo 7 hari dari tanggal hari ini
