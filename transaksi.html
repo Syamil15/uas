@@ -86,18 +86,16 @@
 </body>
 </body>
 <script>
-     
-           // Mengisi kolom input dengan data dari URL
+    
            document.addEventListener('DOMContentLoaded', () => {
             const { name, price } = getQueryParams();
             if (name && price) {
                 document.getElementById('name').value = name;
                 document.getElementById('harga').value = price;
             }
-            validateForm(); // Initial validation check
+            validateForm();
         });
 
-        // Fungsi untuk mengambil parameter URL
         function getQueryParams() {
             const params = new URLSearchParams(window.location.search);
             return {
@@ -106,19 +104,17 @@
             };
         }
 
-        // Fungsi untuk validasi form
         function validateForm() {
             const form = document.getElementById('transaction-form');
             const isValid = form.checkValidity();
             document.getElementById('submit-btn').disabled = !isValid;
         }
 
-        // Attach event listeners to input fields
+        
         document.querySelectorAll('#transaction-form input, #transaction-form select').forEach(input => {
             input.addEventListener('input', validateForm);
         });
 
-        // Checkout function
         function checkout() {
             const name = document.getElementById('name').value;
             const harga = document.getElementById('harga').value;
